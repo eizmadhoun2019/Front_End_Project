@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Personal Choice Card</title>
+    <link rel="stylesheet" href="styles.css">
+	
+	<script type="text/javascript">
+	    function right_click() 
+         {	 
+		 var imgfullPath = document.getElementById("cardimg").src;
+         var imgname = imgfullPath.replace(/^.*[\\\/]/, '');		 
+		 if (parseInt(imgname[0])<3 ){
+		     var nextimg=parseInt(imgname[0])+1;
+		     document.getElementById('cardimg').src= nextimg+".PNG";
+			 var level_no = document.getElementById("spn_level_no").innerText;
+			 var nextlevel_no=parseInt(level_no[6])+1;
+			 level_no="level "+nextlevel_no;
+			 document.getElementById("spn_level_no").innerText=level_no;
+			 
+			 //alert(level_no);
+			 if (nextlevel_no==5)
+			 {	
+             document.getElementById("spn_level_title").innerText="The Knight";	
+             document.getElementById("strength_no").innerText="25";	
+             document.getElementById("Speed_no").innerText="19";
+             document.getElementById("Cost_no").innerText="300";				 
+			 // Create our shared stylesheet:
+             const sheet = new CSSStyleSheet();
+             sheet.replaceSync('#strength{background:#4FACFF;} #speed{background:#4FACFF;} #cost{background:#4FACFF;}');
+             // Apply the stylesheet to a document:
+             document.adoptedStyleSheets = [sheet];
+                     }
+			 else if (nextlevel_no==6)
+			 {	
+			 document.getElementById("spn_level_title").innerText="The Giant";
+			 document.getElementById("strength_no").innerText="35";	
+             document.getElementById("Speed_no").innerText="12";
+             document.getElementById("Cost_no").innerText="2250";
+			 // Create our shared stylesheet:
+             const sheet = new CSSStyleSheet();
+             sheet.replaceSync('#strength{background:#78ad29;} #speed{background:#78ad29;} #cost{background:#78ad29;}');
+             // Apply the stylesheet to a document:
+             document.adoptedStyleSheets = [sheet];
+                     }
+			else
+			  {		
+              document.getElementById("spn_level_title").innerText="The Barbarian";	
+             document.getElementById("strength_no").innerText="20";	
+             document.getElementById("Speed_no").innerText="16";
+             document.getElementById("Cost_no").innerText="250";			  
+			 // Create our shared stylesheet:
+             const sheet = new CSSStyleSheet();
+             sheet.replaceSync('#strength{background:#EC9B3B;} #speed{background:#EC9B3B;} #cost{background:#EC9B3B;}');
+             // Apply the stylesheet to a document:
+             document.adoptedStyleSheets = [sheet];
+                     };
+					 
+			//#spn_level_no{font-family:fa5-proxima-nova,"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:70%;color:#EC9B3B;}
+		      };
+			  
+			
+		 };
+        function left_click() 
+         {
+	     var imgfullPath = document.getElementById("cardimg").src;
+         var imgname = imgfullPath.replace(/^.*[\\\/]/, '');
+		 if (parseInt(imgname[0])>1 ){
+		     var lastimg=parseInt(imgname[0])-1;
+		     document.getElementById('cardimg').src= lastimg+".PNG";
+			 var level_no = document.getElementById("spn_level_no").innerText;
+			 var lastlevel_no=parseInt(level_no[6])-1;
+			 level_no="level "+lastlevel_no;
+			 document.getElementById("spn_level_no").innerText=level_no;
+			 
+			  if (lastlevel_no==5)
+			 {	
+             document.getElementById("spn_level_title").innerText="The Knight";
+             document.getElementById("strength_no").innerText="25";	
+             document.getElementById("Speed_no").innerText="19";
+             document.getElementById("Cost_no").innerText="300";			 
+			 // Create our shared stylesheet:
+             const sheet = new CSSStyleSheet();
+             sheet.replaceSync('#strength{background:#4FACFF;} #speed{background:#4FACFF;} #cost{background:#4FACFF;}');
+             // Apply the stylesheet to a document:
+             document.adoptedStyleSheets = [sheet];
+                     }
+			 else if (lastlevel_no==6)
+			 {			 		
+             document.getElementById("spn_level_title").innerText="The Giant";
+			 document.getElementById("strength_no").innerText="35";	
+             document.getElementById("Speed_no").innerText="12";
+             document.getElementById("Cost_no").innerText="2250";			 
+			 // Create our shared stylesheet:
+             const sheet = new CSSStyleSheet();
+             sheet.replaceSync('#strength{background:#78ad29;} #speed{background:#78ad29;} #cost{background:#78ad29;}');
+             // Apply the stylesheet to a document:
+             document.adoptedStyleSheets = [sheet];
+                     }
+			else
+			  {		
+              document.getElementById("spn_level_title").innerText="The Barbarian";	
+             document.getElementById("strength_no").innerText="20";	
+             document.getElementById("Speed_no").innerText="16";
+             document.getElementById("Cost_no").innerText="250";			  
+			 // Create our shared stylesheet:
+             const sheet = new CSSStyleSheet();
+             sheet.replaceSync('#strength{background:#EC9B3B;} #speed{background:#EC9B3B;} #cost{background:#EC9B3B;}');
+             // Apply the stylesheet to a document:
+             document.adoptedStyleSheets = [sheet];
+                     };
+			 };
+			 
+		 };
+		
+    </script>
+	
+	 
+  </head>
+  <body>
+    <div id="container">
+	    <div id="card">
+		    <div id="left_block"  >
+                <img class="che_circle" onclick="left_click();" src="chevron-circle-left.PNG"  alt="Chevron circle left img">	
+            </div>
+            <div id="card_block">
+                 <div id="part1" >
+                     <img id="backimg" src="card-bg.jpg" alt="Background img">				 
+                 </div>				
+			     <div id="part2">
+					 <br>
+					 <p class="the_level">
+					 <span id="spn_level_no" class="level_no">LEVEL 4</span><br>
+					 <span id="spn_level_title" class="level_title" >The Barbarian</span>
+					 <p class="level_astract">Lorem ipsum dolor sit amet consctetur adipiscing elit. Vestibulm convallis quam arhoncus ullamcorper. Praesnt mauris.</p>
+					 </p>
+                 </div>
+			     <div id="part3">
+                    <div id="strength">
+					         <span id="strength_no" class="card_stats">20</span><br>strength
+                    </div>
+                    <div id="speed">
+					         <span id="Speed_no" class="card_stats">16</span><br>Speed               
+                     </div>
+                    <div id="cost">
+					         <span id="Cost_no" class="card_stats">250</span><br>Cost					     
+                    </div>					  
+                 </div>				
+            </div>
+			<div id="cardimgs">
+                <img id="cardimg" class="rotate-scale-up" src="1.PNG" alt="Card img">      
+            </div>
+		    <div id="right_block" >
+                <img class="che_circle" onclick="right_click();" src="chevron-circle-right.PNG" alt="Chevron circle right img">
+            </div>
+		    
+        </div>
+		 
+    </div>
+  </body>
+</html
